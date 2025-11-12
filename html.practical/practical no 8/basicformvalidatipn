@@ -1,0 +1,23 @@
+<form id="registerForm">
+  <label>Username</label>
+  <input type="text" id="username" />
+
+  <label>Email</label>
+  <input type="email" id="email" />
+
+  <label>Password</label>
+  <input type="password" id="password" />
+
+  <label>Confirm Password</label>
+  <input type="password" id="confirmPassword" />
+
+  <button type="submit" disabled>Register</button>
+</form>
+<div id="errorMessages"></div>
+<script src="script.js"></script>
+usernameError.textContent = "Username must be at least 3 characters long";
+if (allFieldsAreValid) {
+  submitButton.disabled = false;
+} else {
+  submitButton.disabled = true;
+}

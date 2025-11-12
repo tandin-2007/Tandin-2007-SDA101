@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me | Tandin Wangchuk</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* Navbar */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f8a8a8;
+      padding: 15px 40px;
+      border-bottom: 1px solid #000;
+    }
+
+    header .brand {
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+      margin-left: 25px;
+    }
+
+    nav a:hover {
+      color: #ff4d4d;
+    }
+
+    /* Contact section */
+    .contact-section {
+      background-color: #f8a8a8;
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .contact-box {
+      background-color: #b78f8f;
+      width: 450px;
+      padding: 40px;
+      border-radius: 40px;
+      text-align: left;
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-box h2 {
+      color: #000;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 20px;
+      font-weight: 700;
+      border-bottom: 1px solid #aaa;
+      padding-bottom: 10px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .contact-item img {
+      width: 28px;
+      height: 28px;
+      margin-right: 15px;
+      filter: brightness(0) invert(1);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .contact-box {
+        width: 85%;
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">TANDIN WANGCHUK / SOFTWARE ENGINEER</div>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="#">ABOUT ME</a>
+      <a href="#">EDUCATIONAL BACKGROUND</a>
+      <a href="#">CONTACT ME</a>
+    </nav>
+  </header>
+
+  <section class="contact-section">
+    <div class="contact-box">
+      <h2>CONTACT ME</h2>
+
+      <div class="contact-item">
+        <img src="download (1).png"   alt="email">
+        <p>02250.cst@edu.rub.bt</p>
+      </div>
+
+      <div class="contact-item">
+        <img src="download (2).png" alt="phone">
+        <p>+975 179 800 32</p>
+      </div>
+
+      <div class="contact-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt="location">
+        <p>Rinchending, Phuentsholing</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+

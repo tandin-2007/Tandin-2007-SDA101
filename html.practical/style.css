@@ -1,93 +1,270 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <!-- Navigation Bar (Use FLEXBOX here) -->
-    <nav class="navbar">
-        <div class="logo">Portfolio</div>
-        <ul class="nav-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="nav-social">
-            <a href="#">GitHub</a>
-            <a href="#">LinkedIn</a>
-        </div>
-    </nav>
 
-    <!-- Main Content Container (Use GRID here) -->
-    <div class="page-container">
-        
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <h1>Sonam</h1>
-            <p>Frontend Developer & UI Designer</p>
-            <button class="cta-button">View My Work</button>
-        </section>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-        <!-- About Section -->
-        <section class="about" id="about">
-            <h2>About Me</h2>
-            <p>I'm a passionate web developer student who loves creating beautiful and functional websites. I love working with modern technologies and solving complex problems.</p>
-        </section>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333333;
+}
 
-        <!-- Skills Cards (Use FLEXBOX for the cards) -->
-        <section class="skills">
-            <h2>My Skills</h2>
-            <div class="skills-container">
-                <div class="skill-card">
-                    <h3>HTML & CSS</h3>
-                    <p>Expert in semantic HTML and modern CSS</p>
-                </div>
-                <div class="skill-card">
-                    <h3>JavaScript</h3>
-                    <p>Proficient in vanilla JavaScript</p>
-                </div>
-                <div class="skill-card">
-                    <h3>React</h3>
-                    <p>Building interactive user interfaces with React and hooks</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- Portfolio Gallery (Use GRID here) -->
-        <section class="portfolio" id="portfolio">
-            <h2>My Work</h2>
-            <div class="gallery">
-                <div class="project project-1">
-                    <img src="https://via.placeholder.com/300x200/4CAF50/white?text=Project+1" alt="Project 1">
-                    <h3>E-commerce Site</h3>
-                </div>
-                <div class="project project-2">
-                    <img src="https://via.placeholder.com/300x200/2196F3/white?text=Project+2" alt="Project 2">
-                    <h3>Weather App</h3>
-                </div>
-                <div class="project project-3">
-                    <img src="https://via.placeholder.com/300x200/FF9800/white?text=Project+3" alt="Project 3">
-                    <h3>Portfolio Site</h3>
-                </div>
-                <div class="project project-4">
-                    <img src="https://via.placeholder.com/300x200/9C27B0/white?text=Project+4" alt="Project 4">
-                    <h3>Blog Platform</h3>
-                </div>
-                <div class="project project-5">
-                    <img src="https://via.placeholder.com/300x200/F44336/white?text=Project+5" alt="Project 5">
-                    <h3>Mobile App</h3>
-                </div>
-                <div class="project project-6">
-                    <img src="https://via.placeholder.com/300x200/607D8B/white?text=Project+6" alt="Project 6">
-                    <h3>Dashboard</h3>
-                </div>
-            </div>
-        </section>
+.navbar {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  background: #1d1919;
+  color: white;
+  padding: 1rem 2rem;
+}
 
-    </div>
-</body>
-</html>
+.nav-menu {
+  display: flex;
+  list-style: none; 
+  gap: 1rem; 
+}
+
+.nav-menu li a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-social a {
+  color: white;
+  text-decoration: none;
+}
+
+
+.page-container {
+  display: grid;
+  grid-template-areas:
+    "hero"
+    "about"
+    "skills"
+    "portfolio"
+    "contact";
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero {
+  grid-area: hero;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: url('https://via.placeholder.com/1200x400') center/cover no-repeat;
+  color: white;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.hero h1,
+.hero p,
+.hero .cta-button {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-button {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  background: #0e63db;
+  color: white;
+  cursor: pointer;
+}
+
+.about {
+  grid-area: about;
+  padding: 1rem 2rem;
+}
+
+.skills {
+  grid-area: skills;
+  padding: 1rem 2rem;
+}
+
+.skills-container {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap; 
+}
+
+.skill-card {
+  background: #f4f4f4;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1 1 250px; 
+}
+
+.portfolio {
+  grid-area: portfolio;
+  padding: 1rem 2rem;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.project {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 1rem;
+  text-align: center;
+}
+
+.project img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.contact {
+  grid-area: contact;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-menu {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  .nav-social {
+    margin-top: 1rem;
+  }
+  .skills-container {
+    flex-direction: column;
+  }
+  .gallery {
+    grid-template-columns: 1fr; 
+  }
+}
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  background-color: #f6f6f6;
+  color: #222;
+}
+
+header {
+  padding: 15px 30px;
+  border-bottom: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+header h1 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ff6666;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-box {
+  background-color: #f8b2b2;
+  padding: 30px;
+  width: 400px;
+  border-radius: 10px;
+  line-height: 1.6;
+}
+
+.about-box h2 {
+  margin-bottom: 15px;
+}
+
+.skills-hobbies {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.skills-hobbies h3 {
+  margin-bottom: 10px;
+}
+
+.image-box img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+footer {
+  text-align: left;
+  padding: 20px 30px;
+  border-top: 1px solid #ccc;
+  font-size: 14px;
+}
+
+footer a {
+  color: #000;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ff6666;
+}
